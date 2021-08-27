@@ -13,3 +13,22 @@ main {
 #chat {
   background-color: #ece5dd;
 }
+
+.bg-chat-color {
+  background-color: #ece5dd;
+}
+.bg-light-gray {
+  background-color: #eaeaea;
+}
+.bg-chat-image {
+  background-image: url(../img/mine.jpg);
+}
+#chat header,
+#chat footer,
+.user-section {
+  height: 70px;
+}
+.notifiche {
+  height: 80px;
+  background-color: #8edafc;
+}
