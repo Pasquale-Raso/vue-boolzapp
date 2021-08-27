@@ -34,7 +34,29 @@
             class="col-4 p-0 h-100 bg-light-gray d-flex flex-column"
           >
             <!-- USER -->
-            <section class="user-section flex-shrink-0">user</section>
+            <section
+              class="user-section flex-shrink-0 d-flex juatify-content-between"
+            >
+              <div class="media">
+                <figure>
+                  <img src="img/avatar_io.jpg" />
+                </figure>
+                <div class="h6 media-text">Pasquale Raso</div>
+              </div>
+              <div
+                class="
+                  w-25
+                  text-muted
+                  d-flex
+                  justify-content-around
+                  align-items-center
+                "
+              >
+                <i class="fas fa-circle-notch clickable"></i>
+                <i class="fas fa-comment-alt clickable"></i>
+                <i class="fas fa-ellipsis-v clickable"></i>
+              </div>
+            </section>
             <!-- NOTIFICHE -->
             <section class="notifiche flex-shrink-0">notifiche</section>
 
@@ -42,24 +64,9 @@
             <section class="search p-2">search</section>
             <!-- LISTA CONTATTI -->
             <section class="flex-shrink-1 overflow-auto bg-white">
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
-              lista contatti <br />
+              <div v-for="contact in contactsList.contacts">
+                {{contact.name}}
+              </div>
             </section>
           </section>
           <!-- SEZIONE CHAT -->
