@@ -38,7 +38,7 @@ main {
 }
 
 .media figure {
-  height: 60px;
+  height: 70px;
   padding: 0.5rem;
   margin-bottom: 0;
 }
@@ -46,4 +46,41 @@ main {
   height: 100%;
   max-width: 100%;
   border-radius: 50%;
+}
+.media .media-icon {
+  width: 50px;
+  height: 50px;
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.media .media-text {
+  margin-left: 0.5rem;
+  margin-bottom: 0;
+}
+.media .media-secondary-text {
+  margin-bottom: 0;
+}
+li.media:hover {
+  cursor: pointer;
+  background-color: #eaeaea;
+}
+.search {
+  height: 50px;
+  position: relative;
+}
+.search .fa-search {
+  top: 50%;
+  position: absolute;
+  left: 20px;
+  transform: translateY(-50%);
+}
+.search input {
+  height: 100%;
+  border: 0;
+  padding-left: 50px;
 }

@@ -3,6 +3,7 @@ console.log("Ciao", Vue);
 const app = new Vue({
   el: "#app",
   data: {
+    searchTerm: "",
     contactsList: {
       user: {
         name: "Nome Utente",
@@ -32,8 +33,52 @@ const app = new Vue({
           ],
         },
         {
-          name: "Fabio",
+          name: "Francesco",
           avatar: "_2",
+          visible: true,
+          messages: [
+            {
+              date: "10/01/2020 15:30:55",
+              message: "Hai portato a spasso il cane?",
+              status: "sent",
+            },
+            {
+              date: "10/01/2020 15:50:00",
+              message: "Ricordati di dargli da mangiare",
+              status: "sent",
+            },
+            {
+              date: "10/01/2020 16:15:22",
+              message: "Tutto fatto!",
+              status: "received",
+            },
+          ],
+        },
+        {
+          name: "Joyce",
+          avatar: "_3",
+          visible: true,
+          messages: [
+            {
+              date: "10/01/2020 15:30:55",
+              message: "Hai portato a spasso il cane?",
+              status: "sent",
+            },
+            {
+              date: "10/01/2020 15:50:00",
+              message: "Ricordati di dargli da mangiare",
+              status: "sent",
+            },
+            {
+              date: "10/01/2020 16:15:22",
+              message: "Tutto fatto!",
+              status: "received",
+            },
+          ],
+        },
+        {
+          name: "Fabio",
+          avatar: "_4",
           visible: true,
           messages: [
             {
@@ -55,7 +100,7 @@ const app = new Vue({
         },
         {
           name: "Samuele",
-          avatar: "_3",
+          avatar: "_5",
           visible: true,
           messages: [
             {
@@ -77,7 +122,7 @@ const app = new Vue({
         },
         {
           name: "Luisa",
-          avatar: "_4",
+          avatar: "_6",
           visible: true,
           messages: [
             {
@@ -95,5 +140,12 @@ const app = new Vue({
       ],
     },
   },
-  methods: {},
+  methods: {
+    showItem(contact) {
+      if (!this.searchTerm.trim()) return true;
+      const filter = this.searchTerm.trim().toLowerCase();
+      contact = contact.toLowerCase();
+      return contact.includes(filter);
+    },
+  },
 });
