@@ -84,3 +84,33 @@ li.media:hover {
   border: 0;
   padding-left: 50px;
 }
+.message-container {
+  display: flex;
+}
+.message-container.invio {
+  justify-content: flex-end;
+}
+
+.message-container.ricevuto {
+  justify-content: flex-start;
+}
+
+.message-container.invio .message {
+  background-color: #d5f9ba;
+  box-shadow: 7px 7px 13px -2px rgba(81, 81, 81, 0.41);
+}
+
+.message-container.ricevuto .message {
+  background-color: #fff;
+  box-shadow: 7px 7px 13px -2px rgba(81, 81, 81, 0.41);
+}
+
+.message-container .message p {
+  margin-bottom: 0;
+}
+.message-container .message time {
+  display: block;
+  text-align: right;
+  font-size: 11px;
+  color: #aaa;
+}

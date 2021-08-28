@@ -141,6 +141,7 @@ const app = new Vue({
     },
   },
   methods: {
+    // FILTRO
     showItem(contact) {
       if (!this.searchTerm.trim()) return true;
       const filter = this.searchTerm.trim().toLowerCase();

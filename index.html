@@ -83,13 +83,13 @@
             <section class="flex-shrink-1 overflow-auto bg-white">
               <ul class="m-0 p-0">
                 <li v-for="contact in contactsList.contacts"
-                v-for="(contact, index) in contacts"
-                v-if="showItem(contact.name)"
-                class="media h6 media-text">
-                  <figure>
+                  v-for="(contact, index) in contacts"
+                  v-if="showItem(contact.name)"
+                  class="media h6 media-text">
+                  <figure >
                     <img src="img/avatar_1.jpg"/>
                   </figure>
-                {{contact.name}}
+                  {{contact.name}}
                 </li>
               </ul>
             </section>
@@ -100,13 +100,65 @@
             class="col-8 rounded-end d-flex flex-column p-0 h-100 bg-chat-color"
           >
             <!-- header CHAT -->
-            <header class="bg-light-gray flex-grow-0">header</header>
+            <header class="bg-light-gray flex-grow-0 d-flex justify-content-between">
+              <div class="media">
+                <figure>
+                  <img src="img/avatar_1.jpg" />
+                </figure>
+                <div class="h6 media-text">
+                  <div>Michele</div>
+                  <div class="fw-light">
+                    <small>Ultimo accesso oggi alle</small>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="
+                  me-3
+                  d-flex
+                  text-muted
+                  align-items-center
+                  justify-content-around">
+                <i class="fas fa-search ms-3"></i>
+                <i class="fas fa-paperclip ms-3"></i>
+                <i class="fas fa-ellipsis-v ms-3"></i>
+              </div>
+            </header>
             <!-- main CHAT -->
             <div class="mainChat flex-grow-1 overflow-auto bg-chat-image">
-              main chat
+             <ul>
+                <li class="message-container p-3 invio">
+                  <div class="message p-2 rounded-3">
+                    <p>Hai portato a spasso il cane?</p>
+                    <time datetime="2021-08-03T09:53">10/01/2020 - 09:53</time>
+                  </div>
+                </li>
+                <li class="message-container p-3 ricevuto">
+                  <div class="message p-2 rounded-3">
+                    <p>Sì!</p>
+                    <time datetime="2021-08-03T10:07">10/01/2020 - 10:07</time>
+                  </div>
+                </li>
+              </ul>
             </div>
             <!-- footer CHAT -->
-            <footer>footer</footer>
+            <footer class="flex-shrink-0 container-fluid">
+              <div class="row h-100 align-items-center">
+                <div class="col-1">
+                  <i class="far fa-smile fa-2x text-muted clickable"></i>
+                </div>
+                <div class="col-10">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Scrivi un messaggio"
+                  />
+                </div>
+                <div class="col-1">
+                  <i class="fas fa-microphone fa-2x clickable text-muted"></i>
+                </div>
+              </div>
+            </footer>
           </section>
         </div>
       </main>
