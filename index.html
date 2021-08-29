@@ -34,14 +34,12 @@
             class="col-4 p-0 h-100 bg-light-gray d-flex flex-column"
           >
             <!-- USER -->
-            <section
-              class="user-section flex-shrink-0 d-flex justify-content-between"
-            >
+            <section class="user-section flex-shrink-0 d-flex justify-content-between">
               <div class="media">
                 <figure>
-                  <img src="img/avatar_2.jpg" />
+                  <img :src="`img/avatar${contactsList.user.avatar}.jpg`"/>
                 </figure>
-                <div class="h6 media-text">Pasquale Raso</div>
+                <div class="h6 media-text">{{ contactsList.user.name }}</div>
               </div>
               <div
                 class="
@@ -86,9 +84,8 @@
                   v-for="(contact, index) in contacts"
                   v-if="showItem(contact.name)"
                   class="media h6 media-text">
-                  <figure >
-                    <img src="img/avatar_1.jpg"/>
-                  </figure>
+                  <img :src="`img/avatar${contact.avatar}.jpg`" class="mediaList">
+                </figure>
                   {{contact.name}}
                 </li>
               </ul>

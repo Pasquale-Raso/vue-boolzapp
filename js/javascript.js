@@ -6,13 +6,13 @@ const app = new Vue({
     searchTerm: "",
     contactsList: {
       user: {
-        name: "Nome Utente",
-        avatar: "_io",
+        name: "Pasquale",
+        avatar: "_4",
       },
       contacts: [
         {
-          name: "Michele",
-          avatar: "_1",
+          name: "Giuseppe",
+          avatar: "_3",
           visible: true,
           messages: [
             {
@@ -56,7 +56,7 @@ const app = new Vue({
         },
         {
           name: "Joyce",
-          avatar: "_3",
+          avatar: "_io",
           visible: true,
           messages: [
             {
@@ -99,8 +99,8 @@ const app = new Vue({
           ],
         },
         {
-          name: "Samuele",
-          avatar: "_5",
+          name: "Fabrizio",
+          avatar: "_8",
           visible: true,
           messages: [
             {
@@ -121,7 +121,7 @@ const app = new Vue({
           ],
         },
         {
-          name: "Luisa",
+          name: "Veronica",
           avatar: "_6",
           visible: true,
           messages: [

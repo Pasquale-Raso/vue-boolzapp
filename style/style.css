@@ -114,3 +114,14 @@ li.media:hover {
   font-size: 11px;
   color: #aaa;
 }
+.mediaList {
+  width: 60px;
+  height: 60px;
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 10px;
+}
