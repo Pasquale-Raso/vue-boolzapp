@@ -5,6 +5,7 @@ const app = new Vue({
   data: {
     searchTerm: "",
     contactIndex: 0,
+    chatMessage: "",
     user: {
       name: "Pasquale",
       avatar: "_4",
@@ -39,12 +40,12 @@ const app = new Vue({
         messages: [
           {
             date: "10/01/2020 15:30:55",
-            message: "Hai portato a spasso il cane?",
+            message: "Hai mangiato?",
             status: "sent",
           },
           {
             date: "10/01/2020 15:50:00",
-            message: "Ricordati di dargli da mangiare",
+            message: "lava i piatti",
             status: "sent",
           },
           {
@@ -61,17 +62,17 @@ const app = new Vue({
         messages: [
           {
             date: "10/01/2020 15:30:55",
-            message: "Hai portato a spasso il cane?",
+            message: "Hai fatto la spesa?",
             status: "sent",
           },
           {
             date: "10/01/2020 15:50:00",
-            message: "Ricordati di dargli da mangiare",
+            message: "Ricordati il latte",
             status: "sent",
           },
           {
             date: "10/01/2020 16:15:22",
-            message: "Tutto fatto!",
+            message: "Si!",
             status: "received",
           },
         ],
@@ -147,9 +148,24 @@ const app = new Vue({
       contact = contact.toLowerCase();
       return contact.includes(filter);
     },
-    // CLICK CONTATTI E VISUALIZZAZIONE NELL'HEDER
+    // CLICK CONTATTI E VISUALIZZAZIONE NELL'HEDER E NEL MAIN
     showContact(index) {
       this.contactIndex = index;
+    },
+    // SCRIVI MESSAGGIO
+    addMessage() {
+      this.contacts[this.contactIndex].messages.push({
+        date: "10/01/2020 15:30:55",
+        message: this.chatMessage,
+        status: "sent",
+      });
+      setTimeout(() => {
+        this.contacts[this.contactIndex].messages.push({
+          date: "10/01/2020 15:30:55",
+          message: "CIAO!!!!",
+          status: "received",
+        });
+      }, 2000);
     },
   },
 });

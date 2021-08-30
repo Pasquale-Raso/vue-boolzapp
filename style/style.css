@@ -47,6 +47,9 @@ main {
   max-width: 100%;
   border-radius: 50%;
 }
+.active {
+  background-color: rgb(184, 182, 182);
+}
 .media .media-icon {
   width: 50px;
   height: 50px;
@@ -87,20 +90,20 @@ li.media:hover {
 .message-container {
   display: flex;
 }
-.message-container.invio {
+.message-container.sent {
   justify-content: flex-end;
 }
 
-.message-container.ricevuto {
+.message-container.received {
   justify-content: flex-start;
 }
 
-.message-container.invio .message {
+.message-container.sent .message {
   background-color: #d5f9ba;
   box-shadow: 7px 7px 13px -2px rgba(81, 81, 81, 0.41);
 }
 
-.message-container.ricevuto .message {
+.message-container.received .message {
   background-color: #fff;
   box-shadow: 7px 7px 13px -2px rgba(81, 81, 81, 0.41);
 }
