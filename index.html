@@ -37,9 +37,9 @@
             <section class="user-section flex-shrink-0 d-flex justify-content-between">
               <div class="media">
                 <figure>
-                  <img :src="`img/avatar${contactsList.user.avatar}.jpg`"/>
+                  <img :src="`img/avatar${user.avatar}.jpg`"/>
                 </figure>
-                <div class="h6 media-text">{{ contactsList.user.name }}</div>
+                <div class="h6 media-text">{{ user.name }}</div>
               </div>
               <div
                 class="
@@ -80,9 +80,10 @@
             <!-- LISTA CONTATTI -->
             <section class="flex-shrink-1 overflow-auto bg-white">
               <ul class="m-0 p-0">
-                <li v-for="contact in contactsList.contacts"
+                <li 
                   v-for="(contact, index) in contacts"
                   v-if="showItem(contact.name)"
+                  @click="showContact(index)"
                   class="media h6 media-text">
                   <img :src="`img/avatar${contact.avatar}.jpg`" class="mediaList">
                 </figure>
@@ -100,10 +101,10 @@
             <header class="bg-light-gray flex-grow-0 d-flex justify-content-between">
               <div class="media">
                 <figure>
-                  <img src="img/avatar_1.jpg" />
+                  <img :src="`img/avatar${contacts[contactIndex].avatar}.jpg`" />
                 </figure>
                 <div class="h6 media-text">
-                  <div>Michele</div>
+                  <div>{{contacts[contactIndex].name}}</div>
                   <div class="fw-light">
                     <small>Ultimo accesso oggi alle</small>
                   </div>
