@@ -6,6 +6,7 @@ const app = new Vue({
     searchTerm: "",
     contactIndex: 0,
     chatMessage: "",
+    answerRandom: ["ok", "certamente", "vedremo", "non lo so"],
     user: {
       name: "Pasquale",
       avatar: "_4",
@@ -141,6 +142,10 @@ const app = new Vue({
     ],
   },
   methods: {
+    // FUNZIONE RANDOM RISPOSTE
+    randomNumber(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    },
     // FILTRO
     showItem(contact) {
       if (!this.searchTerm.trim()) return true;
@@ -154,6 +159,7 @@ const app = new Vue({
     },
     // SCRIVI MESSAGGIO
     addMessage() {
+      if (!this.chatMessage) return;
       this.contacts[this.contactIndex].messages.push({
         date: "10/01/2020 15:30:55",
         message: this.chatMessage,
@@ -162,10 +168,14 @@ const app = new Vue({
       setTimeout(() => {
         this.contacts[this.contactIndex].messages.push({
           date: "10/01/2020 15:30:55",
-          message: "CIAO!!!!",
+          message:
+            this.answerRandom[
+              this.randomNumber(0, this.answerRandom.length - 1)
+            ],
           status: "received",
         });
-      }, 2000);
+      }, 800);
+      this.chatMessage = "";
     },
   },
 });

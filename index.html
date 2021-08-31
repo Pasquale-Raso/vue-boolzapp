@@ -145,7 +145,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    v-model="chatMessage"
+                    v-model.trim="chatMessage"
                     @keyup.enter="addMessage"
                     placeholder="Scrivi un messaggio"
                   />
