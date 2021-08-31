@@ -107,7 +107,7 @@
                 <div class="h6 media-text">
                   <div>{{contacts[contactIndex].name}}</div>
                   <div class="fw-light">
-                    <small>Ultimo accesso oggi alle</small>
+                    <small>Ultimo accesso oggi alle </small>
                   </div>
                 </div>
               </div>
@@ -126,11 +126,15 @@
             <!-- main CHAT -->
             <div class="mainChat flex-grow-1 overflow-auto bg-chat-image">
              <ul>
-                <li v-for="message in contacts[contactIndex].messages" class="message-container p-3"
+                <li v-for="(message, index) in contacts[contactIndex].messages" class="message-container p-3 "
                 :class="message.status">
-                  <div class="message p-2 rounded-3">
-                    <p>{{ message.message }}</p>
-                    <time>{{ message.date}}</time>
+                  <div class="message p-2 rounded-3 ">
+                      <p> {{ message.message }}</p> 
+                      <span class="dropdown">
+                      <i class="fas fa-trash" 
+                      @click="deleteMessage(index, contactIndex)"></i>
+                   </span>
+                      <time>{{ message.date }}</time>
                   </div>
                 </li>
               </ul>
@@ -159,7 +163,6 @@
         </div>
       </main>
     </div>
-
     <script src="./js/javascript.js"></script>
   </body>
 </html>

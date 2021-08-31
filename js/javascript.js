@@ -6,7 +6,14 @@ const app = new Vue({
     searchTerm: "",
     contactIndex: 0,
     chatMessage: "",
-    answerRandom: ["ok", "certamente", "vedremo", "non lo so"],
+    answerRandom: [
+      "ok",
+      "certamente",
+      "vedremo",
+      "non lo so",
+      "forse si",
+      "credo che tu abbia dei problemi",
+    ],
     user: {
       name: "Pasquale",
       avatar: "_4",
@@ -142,6 +149,10 @@ const app = new Vue({
     ],
   },
   methods: {
+    // CANCELLA MESSAGGIO
+    deleteMessage(index, contactIndex) {
+      this.contacts[contactIndex].messages.splice(index, 1);
+    },
     // FUNZIONE RANDOM RISPOSTE
     randomNumber(min, max) {
       return Math.floor(Math.random() * (max - min + 1) + min);
